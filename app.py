@@ -149,28 +149,28 @@ st.markdown('<h1 class="title-text">DIABETES PREDICTING, GROUP 1</h1>', unsafe_a
 
 # Use st.ma
 st.markdown('<div class="custom-label">Enter your age (required)</div>', unsafe_allow_html=True)
-Age = st.number_input(label='', min_value=3, max_value=120, value=None)
+Age = st.number_input(label='a',min_value=3, max_value=120, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter number of pregnancies, if man enter zero (required)</div>', unsafe_allow_html=True)
-Pregnancies = st.number_input(label='', min_value=0, max_value=14, value=None)
+Pregnancies = st.number_input(label='b', min_value=0, max_value=14, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter glucose level in milligrams (mg) per deciliter (required)</div>', unsafe_allow_html=True)
-Glucose = st.number_input(label='', min_value=1, max_value=1000, value=None)
+Glucose = st.number_input('hy', min_value=1, max_value=1000, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter BloodPressure level in millimeters of mercury (mmHg)</div>', unsafe_allow_html=True)
-BloodPressure = st.number_input(label='', min_value=20, max_value=231, value=None)
+BloodPressure = st.number_input('hc', min_value=20, max_value=231, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter skin thickness in millimeters (mm)</div>', unsafe_allow_html=True)
-SkinThickness = st.number_input(label='', min_value=0.1, max_value=5.6, value=None)
+SkinThickness = st.number_input('md', min_value=0.1, max_value=5.6, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter level of insulin in µU/mL (microunits per milliliter)</div>', unsafe_allow_html=True)
-Insulin = st.number_input(label='', min_value=0.1, max_value=60.0, value=None)
+Insulin = st.number_input('rr', min_value=0.1, max_value=60.0, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter Body Mass Index (BMI) in kg/m2 (kilogram/height square)</div>', unsafe_allow_html=True)
-BMI = st.number_input(label='', min_value=5, max_value=55, value=None)
+BMI = st.number_input('mr', min_value=5, max_value=55, value=None,label_visibility='hidden')
 
 st.markdown('<div class="custom-label">Enter score probability of diabetes based on family history (DiabetesPedigreeFunction)</div>', unsafe_allow_html=True)
-DiabetesPedigreeFunction = st.number_input(label='', min_value=0, max_value=4, value=None)
+DiabetesPedigreeFunction = st.number_input('mm', min_value=0, max_value=4, value=None,label_visibility='hidden')
 
 # Check if all required fields are filled before allowing prediction
 if None in [Age, Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction]:
@@ -181,10 +181,10 @@ else:
         df1 = pd.DataFrame([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]], columns=columns)
         
         # Scale the input data
-        scaled_input = preprocessing_pipeline.transform(df1)
+        #scaled_input = preprocessing_pipeline.transform(df1)
 
         # Make predictions
-        prediction = model.predict(scaled_input)
+        prediction = model.predict(df1)
 
         # Display the result
         if prediction == 1:
