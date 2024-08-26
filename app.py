@@ -147,7 +147,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # Title with custom color
 st.markdown('<h1 class="title-text">DIABETES PREDICTING, GROUP 1</h1>', unsafe_allow_html=True)
 
-# Use st.markdown for labels and st.number_input for inputs
+# Use st.ma
 st.markdown('<div class="custom-label">Enter your age (required)</div>', unsafe_allow_html=True)
 Age = st.number_input(label='', min_value=3, max_value=120, value=None)
 
