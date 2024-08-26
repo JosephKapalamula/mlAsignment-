@@ -141,7 +141,7 @@ custom_css = """
 </style>
 """
 
-# Apply the custom CSS
+# Apply the custom CSSm
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Title with custom color
@@ -186,7 +186,7 @@ else:
         # Make predictions
         prediction = model.predict(df1)
 
-        # Display the result h
+        # Display the result g
         if prediction == 1:
             st.markdown('<div class="success-container"><p>The model predicts that the person is at risk of diabetes!</p></div>', unsafe_allow_html=True)
         else:
