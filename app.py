@@ -186,7 +186,7 @@ else:
         # Make predictions
         prediction = model.predict(df1)
 
-        # Display the result
+        # Display the result h
         if prediction == 1:
             st.markdown('<div class="success-container"><p>The model predicts that the person is at risk of diabetes!</p></div>', unsafe_allow_html=True)
         else:
